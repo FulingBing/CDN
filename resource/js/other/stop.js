@@ -1,0 +1,1 @@
+﻿if(objdata.stop=="false"){document.getElementById("title").innerHTML="服务器正常运行中";document.getElementById("time").innerHTML="祝你游戏愉快";return;}

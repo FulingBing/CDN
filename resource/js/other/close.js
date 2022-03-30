@@ -1,0 +1,1 @@
+﻿function stopall(){document.getElementById("nexthtml").style.display="";}

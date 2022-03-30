@@ -1,0 +1,5 @@
+﻿var yhxy_cdn="";function y_loadcdn(){var js=document.scripts;yhxy_cdn=js[js.length-1].src;yhxy_cdn=yhxy_cdn.substring(0,yhxy_cdn.lastIndexOf('/'));
+yhxy_cdn=yhxy_cdn.substring(0,yhxy_cdn.lastIndexOf('/'));yhxy_cdn=yhxy_cdn.substring(0,yhxy_cdn.lastIndexOf('/'));yhxy_cdn=yhxy_cdn+"/html/yhxy/";}y_loadcdn();
+function closeImg(){document.getElementById("imgbg").style.display="none";}var imgIndex,maxIndex,imgType;function showImg(type,max){imgIndex=1;maxIndex=max;imgType=type;putImg();
+document.getElementById("imgbg").style.display="";}function upImg(){imgIndex--;if(imgIndex<=0){imgIndex=maxIndex;}putImg();}function downImg(){imgIndex++;if(imgIndex>maxIndex){
+imgIndex=1;}putImg();}function putImg(){document.getElementById("imgimg").src=yhxy_cdn+imgType+"_"+imgIndex+".png";document.getElementById("imgnum").innerHTML=imgIndex+"/"+maxIndex;}

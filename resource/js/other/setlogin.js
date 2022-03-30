@@ -1,0 +1,1 @@
+﻿var tzhttp="";function setDome(){var url=location.search;if(url.indexOf("?href=")==-1){window.location.href="../index.html";return;}url=url.replace("?href=","");tzhttp="&href="+url;}setDome();

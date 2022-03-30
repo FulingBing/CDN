@@ -1,0 +1,1 @@
+﻿function confirmEnding(str,target){var start=str.length-target.length;var arr=str.substr(start,target.length);return arr==target;}function SetWebURL(){if(confirmEnding(objdata.server,":25565")){objdata.server=objdata.server.replace(":25565","");}}SetWebURL();

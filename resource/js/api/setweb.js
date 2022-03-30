@@ -1,0 +1,1 @@
+﻿function nohtml5_jump(){window.location.href="//"+window.location.host+"/html5.html";}var nohtml5_tp=true;function nohtml5_cheak(){if(typeof(Worker)!=="undefined"){nohtml5_tp=false;}else{nohtml5_jump();}}function nohtml5_inspect(){if(nohtml5_tp){nohtml5_jump();}}nohtml5_cheak();nohtml5_inspect();
