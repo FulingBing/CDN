@@ -1,0 +1,16 @@
+.divbtn{float:left;border-radius:2px;margin-top:10px;width:200px;height:40px;text-align:center;line-height:40px;color:#FFF;cursor:pointer}.color2{background-color:green}
+.skindiv{position:absolute;width:650px;height:400px;text-align:center;line-height:400px;margin:0 0;cursor:move}.color2:hover{box-shadow:0 0 10px #888888;background-color:#00C200}
+.bht{transition:all 0.3s}.optm{height:30px;width:auto;float:left;line-height:30px;color:#FFF}.mt20{margin-left:20px}.wid315{width:315px}.wid425{width:425px}.m15{margin-left:15px}
+.backdiv{position:fixed;background-color:rgba(0,0,0,0.5);top:0;left:0;width:100vw;height:100vh}.color{background-color:#800080}.color:hover{box-shadow:0 0 10px #888888;background-color:#FF00FF}
+.color3{background-color:#1E1EFF}.color3:hover{box-shadow:0 0 10px #888888;background-color:#1B95FF}.hgui{margin:0 auto;margin-top:10px;width:650px}.m25{margin-left:25px}
+.up{width:430px;border:2px #0088FF solid;background-color:#FFF}.uibtn{position:absolute;margin-top:10px;margin-left:10px}.del{width:450px;height:110px;margin:25vh auto;border:2px #0088FF solid;
+background-color:#FFF}.upb{width:100%;height:100%;border:0}.divm{overflow-y:scroll;position:fixed;width:100%;height:100%;background-color:#FFF;left:0}.divml{margin:0 auto;margin-top:20px;
+width:650px;height:400px;box-shadow:0 0 10px #888888}.opm{width:80vw;height:80vh;margin:10vh 10vw;border:2px #0088FF solid}.opmb{margin:0 0;position:absolute;height:80vh;width:80vw;
+background-color:#FBF2DB}.opmh{width:100%;height:100%;border:0}.opt{margin:0 0;position:absolute;height:30px;width:80vw;background-color:#0088FF}.optc{height:30px;width:30px;float:right;
+cursor:pointer;line-height:30px;text-align:center;font-size:20px;color:#FFF}.up2{height:95px;margin:30vh auto}.logyzmbox{height:44px;width:350px}.logyzm{margin-top:6px;background-color:#888;
+text-align:center;line-height:44px;margin-bottom:10px;color:#FFF}.uplogyzm:hover{background-color:#5830E0}.mat10{margin-top:10px}.uplogyzm{position:absolute;margin-left:0;margin-top:-44px;
+background-color:#0088FF;color:#FFF;line-height:44px;text-align:center;cursor:pointer;transition:all 0.3s}.text{transition:all 0.3s;cursor:pointer}.text:hover{text-shadow:0 0 5px #000}
+.forumadc{color:#0000FF}a:link{text-decoration:none;color:blue}a:hover{text-decoration:none;color:#FF8000}a:active{text-decoration:none;color:#FF8000}a:visited{text-decoration:none;color:blue}
+@keyframes a_l_txt{0%{text-shadow:0 0 10px #606060}50%{text-shadow:0 0 10px #FFF}100%{text-shadow:0 0 10px #606060;}}
+@keyframes a_l_img{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+.load_txt{color:#FFF;animation:a_l_txt 1s linear infinite}.load_img{animation:a_l_img 2s linear infinite;margin-right:10px;vertical-align:middle}

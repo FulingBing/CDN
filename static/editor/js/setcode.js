@@ -1,0 +1,41 @@
+bbcodeParser.addBBCode('[b]{TEXT1}[/b]','<strong>{TEXT1}</strong>');
+bbcodeParser.addBBCode('[s]{TEXT1}[/s]','<del>{TEXT1}</del>');
+bbcodeParser.addBBCode('[i]{TEXT1}[/i]','<em>{TEXT1}</em>');
+bbcodeParser.addBBCode('[u]{TEXT1}[/u]','<u>{TEXT1}</u>');
+bbcodeParser.addBBCode('[color={COLOR1}]{TEXT1}[/color]','<span style="color:{COLOR1}">{TEXT1}</span>');
+bbcodeParser.addBBCode('[size={NUMBER1}]{TEXT1}[/size]','<span style="font-size:{NUMBER1}px">{TEXT1}</span>');
+bbcodeParser.addBBCode('[size={TEXT1}]{TEXT2}[/size]','<span style="font-size:{TEXT1}">{TEXT2}</span>');
+bbcodeParser.addBBCode('[quote]{TEXT1}[/quote]','<xml_hf><div class="hf_bg"><span class="hf_info">{TEXT1}</span></div></xml_hf>');
+bbcodeParser.addBBCode('[code]{TEXT1}[/code]','<pre class="prettyprint">{TEXT1}</pre>');
+bbcodeParser.addBBCode('[img]{LINE1}[/img]','<img src="{LINE1}"/>');
+bbcodeParser.addBBCode('[mask]{TEXT1}[/mask]','<span style="background-color:#454545;color:#454545">{TEXT1}</span>');
+bbcodeParser.addBBCode('[email]{LINE1}[/email]','<a href="emailto:{LINE1}">{TEXT1}</a>');
+bbcodeParser.addBBCode('[url={LINE1}]{TEXT1}[/url]','<a href="{LINE1}" target="_blank">{TEXT1}</a>');
+bbcodeParser.addBBCode('[spoiler]{TEXT1}[/spoiler]','<input type="button" value="点击展开/收拢" class="spoiler" /><div><div style="display:none;border:2px #888888 solid">{TEXT1}</div></div>');
+bbcodeParser.addBBCode('[spoiler={LINE1}]{TEXT1}[/spoiler]','<input type="button" value="{LINE1}" class="spoiler" /><div><div style="display:none;border:2px #888888 solid">{TEXT1}</div></div>');
+bbcodeParser.addBBCode('[backcolor={COLOR1}]{TEXT1}[/backcolor]','<span style="background-color:{COLOR1}">{TEXT1}</span>');
+bbcodeParser.addBBCode('[table]{TEXT1}[/table]','<table class="tablecss">{TEXT1}</table>');
+bbcodeParser.addBBCode('[table={LINE1},{COLOR1}]{TEXT1}[/table]','<table class="tablecss" width="{LINE1}" style="background-color:{COLOR1}">{TEXT1}</table>');
+bbcodeParser.addBBCode('[table={LINE1}]{TEXT1}[/table]','<table class="tablecss" width="{LINE1}">{TEXT1}</table>');
+bbcodeParser.addBBCode('[table,{COLOR1}]{TEXT1}[/table]','<table class="tablecss" style="background-color:{COLOR1}">{TEXT1}</table>');
+bbcodeParser.addBBCode('[tr]{TEXT1}[/tr]','<tr>{TEXT1}</tr>');
+bbcodeParser.addBBCode('[tr={COLOR1}]{TEXT1}[/tr]','<tr style="background-color:{COLOR1}">{TEXT1}</tr>');
+bbcodeParser.addBBCode('[td]{TEXT1}[/td]','<td>{TEXT1}</td>');
+bbcodeParser.addBBCode('[td={NUMBER1},{NUMBER2},{LINE1}]{TEXT1}[/td]','<td colspan="{NUMBER1}" rowspan="{NUMBER2}" width="{LINE1}">{TEXT1}</td>');
+bbcodeParser.addBBCode('[td={NUMBER1},{NUMBER2}]{TEXT1}[/td]','<td colspan="{NUMBER1}" rowspan="{NUMBER2}">{TEXT1}</td>');
+bbcodeParser.addBBCode('[td={LINE1}]{TEXT1}[/td]','<td width="{LINE1}">{TEXT1}</td>');
+bbcodeParser.addBBCode('[sup]{LINE1}[/sup]','<sup>{LINE1}</sup>');
+bbcodeParser.addBBCode('[sub]{LINE1}[/sub]','<sub>{LINE1}</sub>');
+bbcodeParser.addBBCode('[p]{LINE1}[/p]','<p>{LINE1}</p>');
+bbcodeParser.addBBCode('[align={LINE1}]{TEXT1}[/align]','<div style="text-align:{LINE1}">{TEXT1}</div>');
+bbcodeParser.addBBCode('[float={LINE1}]{TEXT1}[/float]','<span style="float:{LINE1}">{TEXT1}</span>');
+bbcodeParser.addBBCode('[font={LINE1}]{TEXT1}[/font]','<font face="{LINE1}">{TEXT1}</font>');
+bbcodeParser.addBBCode('[video]{LINE1}[/video]','<video src="{LINE1}" controls="controls">此浏览器不支持HTML5</video>');
+bbcodeParser.addBBCode('[video={NUMBER1},{NUMBER2}]{LINE1}[/video]','<video width="{NUMBER1}" height="{NUMBER2}" src="{LINE1}" controls="controls">此浏览器不支持HTML5</video>');
+bbcodeParser.addBBCode('[video_a={NUMBER1},{NUMBER2}]ac{NUMBER3}[/video_a]','<iframe style="width:{NUMBER1}px;height:{NUMBER2}px" src="https://www.acfun.cn/player/ac{NUMBER3}" id="ACPlayer-re" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">此浏览器不支持框架</iframe>');
+bbcodeParser.addBBCode('[video_b={NUMBER1},{NUMBER2},{TEXT1}]{TEXT2}[/video_b]','<iframe style="width:{NUMBER1}px;height:{NUMBER2}px" src="https://player.bilibili.com/player.html?bvid={TEXT1}&page={TEXT2}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">此浏览器不支持框架</iframe>');
+bbcodeParser.addBBCode('[audio]{LINE1}[/audio]','<audio src="{LINE1}" controls="controls">此浏览器不支持HTML5</audio>');
+bbcodeParser.addBBCode('[music]{NUMBER1}[/music]','<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id={NUMBER1}&auto=0&height=66">此浏览器不支持框架</iframe>');
+function strDelJs(s){return s.replace(/</g,"&lt;");}function StrToHtml(o){StrToHtmlByObj(document.getElementById(o));}
+function StrToHtmlByCss(c){var cs=document.getElementsByClassName(c);for(var i=0;i<cs.length;i++){StrToHtmlByObj(cs[i]);}}
+function StrToHtmlByObj(m){var c=new showdown.Converter();m.innerHTML=c.makeHtml(bbcodeParser.bbcodeToHtml(m.innerHTML).replace(/\[br\]/g,"</br>"));}

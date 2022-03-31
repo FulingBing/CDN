@@ -1,0 +1,6 @@
+.img{width:130px;height:130px;border-radius:2px;padding:9px;border:1px #C0C0C0 solid}.img:hover .imgbtn{width:130px;height:130px;margin-top:0;margin-left:0}.tbtm{width:50px;height:30px}
+.divimg{position:absolute}.imgbtn{margin-top:65px;margin-left:65px;color:#FFF;width:0;height:0;line-height:130px;background-color:rgba(0,0,0,0.5)}.tbtn{width:70px;height:30px}
+.namecss{font-size:30px;transition:all 0.3s;cursor:default}.namecss:hover{background-color:#4E4E4E;color:#FFF}.ptc{color:#FF8000}.tbtl{width:90px;height:30px}
+.userqmd{color:#000;width:808px;overflow-x:hidden;max-height:150px;overflow-y:scroll;background-image:url('../../img/icon/sigline.gif');background-repeat:no-repeat;padding-top:20px;margin-bottom:10px}
+.m0m0h130{margin-top:0;margin-left:0;height:130px;}.imgxg{transition:all 0.3s;overflow:hidden;cursor:pointer}.userbox{color:#606060;font-size:12px}.mf20{margin-left:20px}
+.head_border_u{width:183px;height:183px;cursor:pointer;position:absolute;margin-top:-160px;margin-left:-26px;background-size:cover}

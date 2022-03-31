@@ -1,0 +1,7 @@
+var readtimepre,timeFunOk,timeFunNo,timeFunErr,timeIsStart=false,timeDiffer;function EjectMsg(s){var body=document.getElementsByTagName('body')[0];var div=document.createElement('div');
+div.innerHTML=s+"<div style='width:20px;height:20px;position:absolute;margin-top:-45px;margin-left:600px;background-color:red;line-height:20px;text-align:center;border-radius:50%;cursor:pointer' onclick='deldiffermsg(this)'>×</div>";
+div.style="position:fixed;margin:auto;padding:10px 10px;width:600px;top:70px;left:0;right:0;z-index:9999;text-align:center;background-color:#FF5080;color:#FFFFFF;border-radius:5px;border:5px solid #FFA8FF;font-size:16px";
+body.appendChild(div);}function DifferTime(){InspectionTime(function(){},function(){EjectMsg("这台电脑的时间似乎不准,可能会导致无法登录，<a href='https://www.bing.com/search?q=%E6%97%B6%E9%97%B4' class='text' target='_blank'>立即校准</a>");},function(){},300000);}
+function InspectionTime(funOk,funNo,funErr,differ){if(timeIsStart){return;}timeIsStart=true;timeFunOk=funOk;timeFunNo=funNo;timeFunErr=funErr;timeDiffer=differ;readtime();}function readtime(){readtimepre=new Date().getTime();
+ajax("/bbs/ServerApi.do?time="+readtimepre,"rereadtime");}function rereadtime(i){timeIsStart=false;if(i.length>10){var denytime=((new Date().getTime())-readtimepre)/2;var sertime=parseInt(i)-denytime;
+if(Math.abs (sertime-readtimepre)>timeDiffer){timeFunNo();}else{timeFunOk();}}else{timeFunErr();}}function deldiffermsg(o){var p=o.parentNode;var r=p.parentNode;r.removeChild(p);}

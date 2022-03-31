@@ -1,0 +1,1 @@
+function isdel(obj){var delid=document.getElementsByName("id");var num=0;for(var i=0;i<delid.length;i++){if(delid[i].checked){num++;}}if(num==0){messageshow("请至少选择一项");return false;}return EjectFormConfirm('确定要这么做吗？',obj,function(){stopall();});}function xzall(b){var delid=document.getElementsByName("id");for(var i=0;i<delid.length;i++){if(i>0){delid[i].checked=b;}}}

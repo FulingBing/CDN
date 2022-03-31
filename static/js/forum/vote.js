@@ -1,0 +1,1 @@
+function voteclick(k){var v=document.getElementsByName("vote_check");var all=0;for(var i=0;i<v.length;i++){if(v[i].checked){all++;}v[i].disabled=false;}if(all>=k){for(var i=0;i<v.length;i++){if(!v[i].checked){v[i].disabled=true;}}}}

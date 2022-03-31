@@ -1,0 +1,1 @@
+function rcyz(){var json=JSON.parse(getCaptchaInfo("reCaptcha"));if(!isPassCaptcha("reCaptcha")){alert("请先验证");return;}sendajax("../CaptchaApi.do?lx=server&key="+json.key+"&type="+json.type+"&t="+c_captchatime(),"",function(res){var obj=JSON.parse(res);if(obj.error==="true"){alert("验证失败");}else{alert("验证通过");}},function(ree){alert("服务器错误");})}

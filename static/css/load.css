@@ -1,0 +1,2 @@
+@keyframes load{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+.loadanimation{border-bottom:2px red solid;border-left:2px red solid;border-radius:50%;animation:load 0.3s linear infinite}.loadhead{width:20px;height:20px;position:fixed;top:60px;right:10px;z-index:998}.loadlogkj{width:980px;height:530px;border:0}.loadlogok{position:absolute;margin-left:480px;margin-top:-180px;width:20px;height:20px}

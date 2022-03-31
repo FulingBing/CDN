@@ -1,0 +1,1 @@
+function showhttp(i){window.open("//"+webserver+"/"+i);}function messageshow(i){alert(i)}function tzhttp(s){window.location.href=s;}

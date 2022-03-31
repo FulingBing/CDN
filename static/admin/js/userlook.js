@@ -1,0 +1,4 @@
+function drow(data,id,title){var chart=iChart.create({render:id,width:800,height:494,background_color:"#fefefe",gradient:false,color_factor:0.2,align:"center",offsetx:0,offsety:0,sub_option:{border:{color:"#BCBCBC",
+width:1},label:{fontweight:500,fontsize:11,color:"#4572a7",sign:"square",sign_size:12,border:{color:"#BCBCBC",width:1},background_color:"#fefefe"}},shadow:true,shadow_color:"#666666",shadow_blur:2,showpercent:false,
+column_width:"70%",bar_height:"70%",radius:"90%",title:title,subtitle:'',footnote:"清梦曦源　-　数据统计",legend:{enable:true,background_color:"#fefefe",color:"#333333",fontsize:12,column:1,align:"right",valign:"center",
+offsetx:0,offsety:0},type:"pie2d",data:data});chart.draw();}drow(play_time,"tg0","用户在线时间统计");drow(play_num,"tg1","用户小号统计");document.getElementById("c_time").innerHTML=c_time;

@@ -1,0 +1,1 @@
+var monbox=document.getElementById("money");function setcolor(id,m){for(var t=1;t<=5;t++){var b=document.getElementById("m"+t);if(t==id){b.style.borderColor="#FF8000";}else{b.style.borderColor="#E2E2E2";}}if(id==5){document.getElementById("zdymon").focus();}monbox.value=m;}function subthis(){if(monbox.value==""){alert("请填写金额");return false;}return true;}setcolor(1,'0.01');

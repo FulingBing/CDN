@@ -1,0 +1,14 @@
+var fm_cdn="";function fm_loadcdn(){var js=document.scripts;fm_cdn=js[js.length-1].src;fm_cdn=fm_cdn.substring(0,fm_cdn.lastIndexOf('/'));fm_cdn=fm_cdn.substring(0,fm_cdn.lastIndexOf('/'));fm_cdn=fm_cdn+"/html/";}fm_loadcdn();
+var c="dir=image",p="",js="parent.cm_edit_addtxt('![%name%](%url%)');parent.cm_edit_closeDiv();";function reGet(i){if(i.indexOf("{")!=-1){var j=eval('('+i+')');var h="";var isp=false;p=p.replace("//","/");for(var n=0;n<j.file_list.length;n++){
+if(j.file_list[n].has_file){var tp=p;if(tp!=""){tp=tp+"/";}tp="onclick=\"gotoUrl('"+tp+j.file_list[n].filename+"/')\"";
+h=h+"<div class='cm_edit_mf_fo_b cm_edit_mfh cm_edit_mfn' "+tp+"><img class='cm_edit_mf_im' src='"+fm_cdn+"img/folder-16.gif'/><span class='cm_edit_cco'>"+j.file_list[n].filename+"</span><span class='cm_edit_mf_ti'>"+j.file_list[n].datetime+"</span></div>";
+}else{var z=js.replace("%url%",j.current_url.replace("//","/")+j.file_list[n].filename).replace("%name%",j.file_list[n].filename);if(j.file_list[n].is_photo){isp=true;
+h=h+"<div class='cm_edit_mm_b cm_edit_mf_fo_b' title='"+j.file_list[n].filename+"' onclick=\""+z+"\"><img src='"+j.current_url+j.file_list[n].filename+"' class='cm_edit_mm_m'/><div class='cm_edit_mm_t cm_edit_mf_ov cm_edit_mfh cm_edit_cco'>"+j.file_list[n].filename+"</div></div>";
+}else{var t=j.file_list[n].filesize;var s;if(t>1048576){s=t/1048576+"MB";}else if(t>1024){s=t/1024+"KB";}else{s=t+"B";}
+h=h+"<div class='cm_edit_mf_fo_b cm_edit_mfh cm_edit_mfn' onclick=\""+z+"\"><img class='cm_edit_mf_im' src='"+fm_cdn+"img/file-16.gif'/><span class='cm_edit_cco'>"+j.file_list[n].filename+"</span><span class='cm_edit_mf_si'>"+s+"</span><span class='cm_edit_mf_ti'>"+j.file_list[n].datetime+"</span></div>";
+}}}var d=p,a=[],n=0;while(d.indexOf("/")!=-1){var e=d.indexOf("/");a[n]=d.substring(0,e);d=d.substring(e+1,d.length);n++;;}if(p!=""){var u="";for(var m=0;m<a.length-1;m++){u=u+a[m]+"/"}if(isp){
+h="<div class='cm_edit_mm_b cm_edit_mf_fo_b' onclick=\"gotoUrl('"+u+"')\"><img src='"+fm_cdn+"img/folder-64.gif' class='cm_edit_mm_m'/><div class='cm_edit_mm_t cm_edit_mfh cm_edit_cco'>..</div></div>"+h;
+}else{h="<div class='cm_edit_mf_fo_b cm_edit_mfh cm_edit_mfn' onclick=\"gotoUrl('"+u+"')\"><img class='cm_edit_mf_im' src='"+fm_cdn+"img/folder-16.gif'/><span class='cm_edit_cco'>..</span></div>"+h;}}
+d="";i=h;h="";for(var m=0;m<a.length-1;m++){d=d+a[m]+"/";h=h+"/<span onclick=\"gotoUrl('"+d+"')\" class='cm_edit_a'>"+a[m]+"</span>";}if(a.length>0){h="<span onclick=\"gotoUrl('')\" class='cm_edit_a'>根目录</span>"+h+"/"+a[a.length-1];
+}else{h="根目录";}}document.getElementById("cm_edit_mfh").innerHTML=h;document.getElementById("cm_edit_mfn").innerHTML=i;document.getElementById("cm_edit_mfm").style.display="none";}function gotoUrl(s){p=s;
+document.getElementById("cm_edit_mfm").style.display="";ajax("../jsp/file_manager_json.jsp?"+c+"&path="+s,"reGet");}

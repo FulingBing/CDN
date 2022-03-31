@@ -1,0 +1,5 @@
+var o_order=document.getElementById("order");var o_id=document.getElementById("id");var o_title=document.getElementById("title");var o_pid=document.getElementById("pid");var o_looklv=document.getElementById("looklv");var o_tstz=document.getElementById("tstz");
+var o_ztlv=document.getElementById("ztlv");var o_hflv=document.getElementById("hflv");var o_money=document.getElementById("money");var o_info=document.getElementById("info");var o_lookimg=document.getElementById("lookimg");function setBk(a,b,c,d,e,f,g,h,i,j){
+o_order.value=a;o_id.value=b;o_title.value=c;o_pid.value=d;o_looklv.value=e;o_ztlv.value=f;o_hflv.value=g;if(h==1){o_money.checked=true;}else{o_money.checked=false;}if(i=="true"){o_lookimg.checked=true;}else{o_lookimg.checked=false;}o_tstz.value=j;
+var s=document.getElementById("info_"+b).innerHTML;o_info.innerHTML=s;document.getElementById('infobox').style.display='';}function delbk(id,token){EjectConfirm('确定要这么做吗？',function(){stopall();
+window.location.href="../doServer.do?delbk="+id+"&token="+token;});}function delbkimg(id,token){EjectConfirm('确定要这么做吗？',function(){stopall();window.location.href="../doServer.do?delbkimg="+id+"&token="+token;});}

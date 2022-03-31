@@ -1,0 +1,10 @@
+var name,isAutoLog;function yz(s,t){isAutoLog=s;var sub=document.getElementById("sub");if(sub.innerHTML.length!==2){return;}document.getElementById("pwdt").innerHTML="";name=document.getElementById("name").value;
+var pwdt=document.getElementById("pwd");var pwd=pwdt.value;if(pwd.length<6 && pwd.length>0){document.getElementById("pwdt").innerHTML="密码至少6位";return;}if(name.length<3){document.getElementById("pwdt").innerHTML="请输入正确的账号";return;}
+if(!isPassCaptcha("reCaptcha")){document.getElementById("pwdt").innerHTML="请点击验证码进行人机验证";return;}sub.innerHTML="正在登录...";pwdt.value="";var tp="none";if(!s){if(pwd.length>0){tp=enpwd(pwd);}}logins(tp,t);}
+function logins(p,t){ajax("../../LoginApi.do?id="+name+"&key="+p+t+"&token="+getCaptchaKey("reCaptcha"),"reajax");}function reajax(i){var sub=document.getElementById("sub");
+if(i.length>20){if(document.getElementById("autolog").checked){addlogkey(name,i);}sub.innerHTML="登录成功，正在跳转";parent.location.reload();}else if(i=="2fa"){var code=prompt("请打开二步验证APP，输入上面的动态密码，5分钟内有效。");
+if(code!=null && code!=""){logins(enpwd(code),"");}else{sub.innerHTML="登录";reloadUi();reloadyzm();}}else if(i=="false" || i=="time"){if(isAutoLog){document.getElementById("pwdt").innerHTML="登录超时，此登录信息已过期，请重新登录";reloadUi();}
+else{document.getElementById("pwdt").innerHTML="账号或密码错误";}sub.innerHTML="登录";reloadyzm();}else if(i=="no"){document.getElementById("pwdt").innerHTML="此账号已被服务器限制登录";sub.innerHTML="禁止登录";}
+else if(i=="repwd"){document.getElementById("pwdt").innerHTML="账户已被紧急冻结，通过找回密码的功能重置密码后可正常使用";sub.innerHTML="禁止登录";}else if(i=="yzm"){document.getElementById("pwdt").innerHTML="人机验证出现异常，请重新点击验证码进行验证";
+sub.innerHTML="登录";reloadUi();reloadyzm();}else{var reres=/^[0-9]\d*$/;if(reres.test(i)){document.getElementById("pwdt").innerHTML="你的操作过于频繁，请一段时间后重试";}else{document.getElementById("pwdt").innerHTML="错误：服务器繁忙，请稍后重试";}
+sub.innerHTML="登录";reloadUi();reloadyzm();}}function reloadyzm(){reloadCaptcha("reCaptcha");}function reloadUi(){if(isAutoLog){document.getElementById("name").type="text";document.getElementById("pwd").type="password";}}

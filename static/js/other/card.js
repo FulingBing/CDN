@@ -1,0 +1,3 @@
+function showcard(o){if(o){o.style.zIndex=20;o.style.opacity=1;}}function hidecard(o){if(o){o.style.zIndex=-1;o.style.opacity=0;}}var isOpening=false;var openObj;function opencard(o){if(isOpening){return;}isOpening=true;
+openObj=o;if(o.innerHTML.indexOf("<div")!=-1){showcard(o.firstElementChild);isOpening=false;}else{ajax("ServerApi.do?card="+o.firstElementChild.innerHTML,"reopencard");}}function reopencard(s){if(!s){s="<div style='display:none;width:0;height:0'></div>";}
+if(s.indexOf("<div")==-1){isOpening=false;return;}openObj.innerHTML=s+openObj.innerHTML;isOpening=false;}function closecard(o){if(o.innerHTML.indexOf("<div")!=-1){hidecard(o.firstElementChild);}}

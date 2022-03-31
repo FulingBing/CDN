@@ -1,0 +1,4 @@
+function cb(o,t,m,h,j){document.getElementById("look").innerHTML=o.innerHTML;document.getElementById("tit").innerHTML=t;document.getElementById("msg").innerHTML="获得这个头像框需要满足以下条件<div style='text-align:left;width:225px'><ul>"+m
++"</ul></div>佩戴这个头像框需要满足以下条件<div style='text-align:left;width:225px'><ul>"+j+"</ul></div>";var dh=document.getElementById("have");if(use==h){dh.innerHTML="<input type='button' value='此头像框已佩戴' class='button wid150 hei35'/>";}
+else{if(have.indexOf(","+h+",")==-1){dh.innerHTML="<input type='button' value='尚未拥有' class='button wid150 hei35'/><div style='text-align:left;width:225px'><p>请在游戏中输入<span class='headusr'><b> /headborder </b></span>查看具体的要求，并根据指令的提示来获取</p></div>";}else{
+if(bbslv<200){dh.innerHTML="<input type='button' value='未达到佩戴条件' class='button wid150 hei35'/>";}else{dh.innerHTML="<input type='button' value='佩戴此头像框' class='button_b wid150 hei35' onclick=\"window.location.href='../../SetUser.do?border="+h+"&token="+token+"'\"/>";}}}}

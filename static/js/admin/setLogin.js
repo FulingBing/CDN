@@ -1,0 +1,1 @@
+function loginloadover(){document.getElementById("loadok").style.display="none";}

@@ -1,0 +1,1 @@
+function enpwd(s){return md5(getTime()+md5(s));}function getTime(){var t=new Date();var year=t.getUTCFullYear();var month=t.getUTCMonth()+1;if(month<10){month="0"+month;}var date=t.getUTCDate();if(date<10){date="0"+date;}var hour=t.getUTCHours();if(hour<10){hour="0"+hour;}var minu=t.getUTCMinutes();if(minu<10){minu="0"+minu;}return year+""+month+""+date+""+hour+""+minu;}

@@ -1,0 +1,1 @@
+function del(i){EjectConfirm("确定要这么做吗？",function(){stopall();window.location.href="banip.jsp?del="+i+"&token="+token;});}function clearip(){EjectConfirm("确定要这么做吗？",function(){stopall();window.location.href="banip.jsp?clear=1&token="+token;});}

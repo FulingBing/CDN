@@ -1,0 +1,1 @@
+function tzgr(){var vote=document.getElementsByName("vote");for(var i=0;i<vote.length;i++){vote[i].style.display="none";}var gr=document.getElementById("gr");var n=gr.selectedIndex;if(n>0){n--;vote[n].style.display="";}}

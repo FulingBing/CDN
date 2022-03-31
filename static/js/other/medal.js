@@ -1,0 +1,1 @@
+var medalimg=document.getElementsByClassName("medalimg");for(var j=0;j<medalimg.length;j++){(function(j){medalimg[j].onmouseover=function(){medalimg[j].nextElementSibling.style.display="";};medalimg[j].onmouseout=function(){medalimg[j].nextElementSibling.style.display="none";};})(j);}
