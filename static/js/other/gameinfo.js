@@ -28,4 +28,5 @@ document.getElementById("chat").innerHTML="";}getchatrun();function setbknum(i){
 return;}stopall();ajax("/bbs/gameinfo.do?token="+token+"&getres="+i,"regetres");}function regetres(i){if(i.indexOf("{")==0){window.location.reload();return;}showall();var re="";if(i=="[]"){re="哎呀，什么也没有弄到，休息一下再来吧";}else{if(i.indexOf("[")==0){var obj=JSON.parse(i);
 if(obj.length!=1){re="哎呀，什么也没有弄到，休息一下再来吧";}else{re=obj[0].name;if(obj[0].error=="false"){    re="获得了"+re+"　<span onclick='setres()' class='text cupo headusr'>放入离线背包</span>　<span onclick=\"setresmsg('操作成功')\" class='text cupo cff80'>丢弃</span>";}}}}
 rescd=11;setrescd(0);setresmsg(re);}function setres(){stopall();ajax("/bbs/gameinfo.do?token="+token+"&resok=1","reresok");}function reresok(i){if(i.indexOf("{")==0){window.location.reload();return;}showall();var re;if(i=="[]"){re="哎呀，东西弄丢了，重新获取吧";}else{setbknum(1);
-re="操作成功";}setresmsg(re);}
+re="操作成功";}setresmsg(re);}function getToMoney(i){ajax("/bbs/gameinfo.do?token="+token+"&exchange="+i,"regetToMoney");}function regetToMoney(i){if(i.indexOf("{")==0){window.location.reload();return;}showall();var t1="Error",t2="Error";if(i.indexOf("[")==0){var obj=JSON.parse(i);
+t1=obj[0].today;t2=obj[0].other;}document.getElementById("todaymoney").innerHTML="<b>"+t1+"</b>(今日回收数量,每日重置)";document.getElementById("othermoney").innerHTML="<b>"+t2+"</b>(额外回收数量,永不过期)";}getToMoney(0);
