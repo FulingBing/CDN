@@ -1,0 +1,4 @@
+﻿function download(){document.getElementById("alertbk").style.display="";document.getElementById("downloadbk").style.display="";}function hide(){document.getElementById("alertbk").style.display="none";
+document.getElementById("downloadbk").style.display="none";document.getElementById("htmlbk").style.display="none";}function wo(s){window.open(s);}function sethttp(i){var iframe=document.getElementById("htmlth");iframe.src=i;
+if(iframe.attachEvent){iframe.attachEvent("onload", function(){document.getElementById("divload").innerHTML="";});}else{iframe.onload=function(){document.getElementById("divload").innerHTML="";};}}
+function showhttp(i){document.getElementById("alertbk").style.display="";document.getElementById("htmlbk").style.display="";document.getElementById("divload").innerHTML="正在加载";sethttp(i);}
