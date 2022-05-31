@@ -32,8 +32,8 @@ bbcodeParser.addBBCode('[float={LINE1}]{TEXT1}[/float]','<span style="float:{LIN
 bbcodeParser.addBBCode('[font={LINE1}]{TEXT1}[/font]','<font face="{LINE1}">{TEXT1}</font>');
 bbcodeParser.addBBCode('[video]{LINE1}[/video]','<video src="{LINE1}" controls="controls">此浏览器不支持HTML5</video>');
 bbcodeParser.addBBCode('[video={NUMBER1},{NUMBER2}]{LINE1}[/video]','<video width="{NUMBER1}" height="{NUMBER2}" src="{LINE1}" controls="controls">此浏览器不支持HTML5</video>');
-bbcodeParser.addBBCode('[video_a={NUMBER1},{NUMBER2}]ac{NUMBER3}[/video_a]','<iframe style="width:{NUMBER1}px;height:{NUMBER2}px" src="https://www.acfun.cn/player/ac{NUMBER3}" id="ACPlayer-re" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">此浏览器不支持框架</iframe>');
-bbcodeParser.addBBCode('[video_b={NUMBER1},{NUMBER2},{TEXT1}]{TEXT2}[/video_b]','<iframe style="width:{NUMBER1}px;height:{NUMBER2}px" src="https://player.bilibili.com/player.html?bvid={TEXT1}&page={TEXT2}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">此浏览器不支持框架</iframe>');
+bbcodeParser.addBBCode('[video_a={NUMBER1},{NUMBER2}]ac{NUMBER3}[/video_a]','<iframe style="width:{NUMBER1}px;height:{NUMBER2}px;border:0" src="https://www.acfun.cn/player/ac{NUMBER3}" id="ACPlayer-re" scrolling="no" framespacing="0" allowfullscreen="true">此浏览器不支持框架</iframe>');
+bbcodeParser.addBBCode('[video_b={NUMBER1},{NUMBER2},{TEXT1}]{TEXT2}[/video_b]','<iframe style="width:{NUMBER1}px;height:{NUMBER2}px;border:0" src="https://player.bilibili.com/player.html?bvid={TEXT1}&page={TEXT2}" scrolling="no" framespacing="0" allowfullscreen="true">此浏览器不支持框架</iframe>');
 bbcodeParser.addBBCode('[audio]{LINE1}[/audio]','<audio src="{LINE1}" controls="controls">此浏览器不支持HTML5</audio>');
 bbcodeParser.addBBCode('[music]{NUMBER1}[/music]','<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id={NUMBER1}&auto=0&height=66">此浏览器不支持框架</iframe>');
 function strDelJs(s){return s.replace(/</g,"&lt;");}function StrToHtml(o){StrToHtmlByObj(document.getElementById(o));}
