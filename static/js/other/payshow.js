@@ -1,0 +1,1 @@
+function look(o){var l=o.parentNode.parentNode.nextElementSibling;if(l){if(l.style.display=="none"){l.style.display="";o.value="收起";}else{l.style.display="none";o.value="查看";}}}

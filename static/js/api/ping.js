@@ -1,0 +1,2 @@
+function pingIP(u,i,m){document.getElementById(i).innerHTML="正在计算";var img=new Image();var start=new Date().getTime();img.onerror=function(){_pingIP(start,i,m);};img.src="http://"+u+"?t="+start;}function _pingIP(t,i,m){
+var p=(new Date().getTime())-t;var h=document.getElementById(i);h.innerHTML=p+"ms";if(p<=100){h.style.color="#008000";}else if(p>100 && p<=500){h.style.color="#FF8000";}else{h.style.color="#FF5080";h.innerHTML=h.innerHTML+"　"+m;}}

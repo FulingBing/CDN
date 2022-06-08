@@ -2,5 +2,5 @@
 document.getElementById("downloadbk").style.display="none";document.getElementById("htmlbk").style.display="none";}function wo(s){window.open(s);}function sethttp(i){var iframe=document.getElementById("htmlth");iframe.src=i;
 if(iframe.attachEvent){iframe.attachEvent("onload", function(){document.getElementById("divload").innerHTML="";});}else{iframe.onload=function(){document.getElementById("divload").innerHTML="";};}}
 function showhttp(i){document.getElementById("alertbk").style.display="";document.getElementById("htmlbk").style.display="";document.getElementById("divload").innerHTML="正在加载";sethttp(i);}
-function showList(o){var cl=document.getElementsByName("clib");var clm=document.getElementsByName("clibm");if(cl && clm){cl[o].style.width=(100-10*(cl.length-1))+"%";clm[o].style.width="auto";
-for(var i=0;i<cl.length;i++){if(o!=i){cl[i].style.width="10%";clm[i].style.width="0";}}}}
+function showList(o){var cl=document.getElementsByName("clib");var clt=document.getElementsByName("clibt");var clm=document.getElementsByName("clibm");if(cl && clm && clt){clt[o].style.writingMode="horizontal-tb";
+cl[o].style.width=(100-10*(cl.length-1))+"%";clm[o].style.width="auto";for(var i=0;i<cl.length;i++){if(o!=i){clt[i].style.writingMode="vertical-lr";cl[i].style.width="10%";clm[i].style.width="0";}}}}
